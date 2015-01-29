@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://master.plentymarkets.com/" />
+<title>addItemsToBusket</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">addItemsToBusket</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/wohnzimmer/sessel-sofas/schaukelstuhl-bronx/a-120/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_add_basket_ajax</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/wohnzimmer/sessel-hocker/sessel-redlabel/a-125/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_add_basket_ajax</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/basket/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_proceed_orderWebBasket2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebLoginRegisterRadio1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebLogin1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsFirstName</td>
+	<td>Thomas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsLastName</td>
+	<td>Müller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsStreet</td>
+	<td>Ahornweg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsHouseNo</td>
+	<td>777</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsAddressAdditional</td>
+	<td>DD</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsZIPCode</td>
+	<td>34117</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsCity</td>
+	<td>Kassel</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail</td>
+	<td>thomas.mueller@example.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail2</td>
+	<td>thomas.mueller@example.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsTelephone</td>
+	<td>0123/45678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsMobilenumber</td>
+	<td>0123/45678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthday</td>
+	<td>08</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthmonth</td>
+	<td>04</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthyear</td>
+	<td>1988</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebInvoiceDetailsShippingAdressThis</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebInvoiceDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebPaymentMethod0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebPaymentMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebShippingMethod6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebShippingMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewAGB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewWithdrawal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebOrderOverviewNotesTextarea</td>
+	<td>seleniumhq</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_place_orderWebOrderOverview</td>
+	<td> #PlentyWebPurchaseConfirmationNotice1.PlentyFormContainer</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
