@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://trainstation.plenty-showcase.de/" />
+<title>testcase_eu</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">testcase_eu</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/wohnzimmer/sessel-hocker/sessel-redlabel/a-125/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_add_basket_ajax</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/basket/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_proceed_order</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebLoginRegisterRadio1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebLogin1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsFirstName</td>
+	<td>Thomas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsLastName</td>
+	<td>Müller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsStreet</td>
+	<td>Ahornweg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsHouseNo</td>
+	<td>777</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsAddressAdditional</td>
+	<td>A</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsZIPCode</td>
+	<td>34117</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsCity</td>
+	<td>Kassel</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail</td>
+	<td>thomas.mueller@example.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail2</td>
+	<td>thomas.mueller@example.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsTelephone</td>
+	<td>0123/45678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsMobilenumber</td>
+	<td>0123/45678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthday</td>
+	<td>08</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthmonth</td>
+	<td>04</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthyear</td>
+	<td>1988</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebInvoiceDetailsShippingAdressOther</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebInvoiceDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsFirstName</td>
+	<td>Thomas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsLastName</td>
+	<td>Müller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsStreet</td>
+	<td>Belgrave Square</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsHouseNo</td>
+	<td>23</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsZIPCode</td>
+	<td>SW1X 8PZ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebShippingDetailsCity</td>
+	<td>London</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=PlentyWebShippingDetailsCountry</td>
+	<td>label=United Kingdom</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebShippingDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextShippingDetailsList</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebPaymentMethod0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebPaymentMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebShippingMethod7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebShippingMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewAGB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewWithdrawal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebOrderOverviewNotesTextarea</td>
+	<td>seleniumhq</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_place_orderWebOrderOverview</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td></td>
+	<td>http://trainstation.plenty-showcase.de/de/-OrderShowQQMakeOrder/</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

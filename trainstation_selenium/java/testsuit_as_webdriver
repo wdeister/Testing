@@ -7,6 +7,7 @@ public class Testsuit_as_webdriver {
     TestSuite suite = new TestSuite();
     suite.addTestSuite(testcase_inland.class);
     suite.addTestSuite(testcase_world.class);
+    suite.addTestSuite(testcase_eu.class);
     return suite;
   }
 
