@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Testcase3AsWebdriver {
+public class TestcaseEu {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -23,7 +23,7 @@ public class Testcase3AsWebdriver {
   }
 
   @Test
-  public void testCase3AsWebdriver() throws Exception {
+  public void testCaseEu() throws Exception {
     driver.get(baseUrl + "/wohnzimmer/sessel-hocker/sessel-redlabel/a-125/");
     driver.findElement(By.id("button_add_basket_ajax")).click();
     driver.get(baseUrl + "/basket/");
@@ -89,6 +89,7 @@ public class Testcase3AsWebdriver {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+    driver.get(baseUrl + "/-ActionCallQQWebActionLogoutCustomer/");
   }
 
   @After

@@ -18,7 +18,7 @@ public class TestcaseInland {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://master.plentymarkets.com/";
+    baseUrl = "http://trainstation.plenty-showcase.de/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -76,6 +76,7 @@ public class TestcaseInland {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+    driver.get(baseUrl + "/-ActionCallQQWebActionLogoutCustomer/");
   }
 
   @After

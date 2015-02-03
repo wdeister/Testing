@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://master.plentymarkets.com/" />
+<link rel="selenium.base" href="http://trainstation.plenty-showcase.de/" />
 <title>addItemsToBusket</title>
 </head>
 <body>
@@ -212,9 +212,24 @@
 	<td> #PlentyWebPurchaseConfirmationNotice1.PlentyFormContainer</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyTitle</td>
 	<td></td>
 	<td>http://trainstation.plenty-showcase.de/de/-OrderShowQQMakeOrder/</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/-ActionCallQQWebActionLogoutCustomer/</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

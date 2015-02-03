@@ -257,11 +257,25 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyTitle</td>
 	<td></td>
 	<td>http://trainstation.plenty-showcase.de/de/-OrderShowQQMakeOrder/</td>
 </tr>
-
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/-ActionCallQQWebActionLogoutCustomer/</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

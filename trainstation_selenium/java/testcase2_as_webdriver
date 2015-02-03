@@ -89,6 +89,7 @@ public class TestcaseWorld {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+    driver.get(baseUrl + "/-ActionCallQQWebActionLogoutCustomer/");
   }
 
   @After
