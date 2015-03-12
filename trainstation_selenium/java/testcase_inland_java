@@ -24,7 +24,7 @@ public class TestcaseInland {
 
   @Test
   public void testCaseInland() throws Exception {
-    driver.get(baseUrl + "/wohnzimmer/sessel-sofas/schaukelstuhl-bronx/a-120/");
+    driver.get(baseUrl + "/wohnzimmer/sessel-hocker/wohnzimmer-sessel-sofas-moderner-ledersessel-seattle-gr-n/a-102/?ReferrerID=3");
     driver.findElement(By.id("button_add_basket_ajax")).click();
     driver.get(baseUrl + "/wohnzimmer/sessel-hocker/sessel-redlabel/a-125/");
     driver.findElement(By.id("button_add_basket_ajax")).click();
