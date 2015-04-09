@@ -262,9 +262,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyTitle</td>
+	<td>assertTitle</td>
+	<td>Bahnhof</td>
 	<td></td>
-	<td>http://trainstation.plenty-showcase.de/de/-OrderShowQQMakeOrder/</td>
 </tr>
 <tr>
 	<td>pause</td>
