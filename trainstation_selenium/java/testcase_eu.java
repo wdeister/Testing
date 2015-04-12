@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestcaseInland {
+public class TestcaseEu {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -23,9 +23,7 @@ public class TestcaseInland {
   }
 
   @Test
-  public void testCaseInland() throws Exception {
-    driver.get(baseUrl + "/wohnzimmer/sessel-hocker/wohnzimmer-sessel-sofas-moderner-ledersessel-seattle-gr-n/a-102/?ReferrerID=3");
-    driver.findElement(By.id("button_add_basket_ajax")).click();
+  public void testCaseEu() throws Exception {
     driver.get(baseUrl + "/wohnzimmer/sessel-hocker/sessel-redlabel/a-125/");
     driver.findElement(By.id("button_add_basket_ajax")).click();
     driver.get(baseUrl + "/basket/");
@@ -60,22 +58,33 @@ public class TestcaseInland {
     driver.findElement(By.id("PlentyWebInvoiceDetailsBirthmonth")).sendKeys("04");
     driver.findElement(By.id("PlentyWebInvoiceDetailsBirthyear")).clear();
     driver.findElement(By.id("PlentyWebInvoiceDetailsBirthyear")).sendKeys("1988");
-    driver.findElement(By.id("PlentyWebInvoiceDetailsShippingAdressThis")).click();
+    driver.findElement(By.id("PlentyWebInvoiceDetailsShippingAdressOther")).click();
     driver.findElement(By.id("button_nextWebInvoiceDetails")).click();
+    driver.findElement(By.id("PlentyWebShippingDetailsFirstName")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsFirstName")).sendKeys("Thomas");
+    driver.findElement(By.id("PlentyWebShippingDetailsLastName")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsLastName")).sendKeys("Müller");
+    driver.findElement(By.id("PlentyWebShippingDetailsStreet")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsStreet")).sendKeys("Belgrave Square");
+    driver.findElement(By.id("PlentyWebShippingDetailsHouseNo")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsHouseNo")).sendKeys("23");
+    driver.findElement(By.id("PlentyWebShippingDetailsZIPCode")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsZIPCode")).sendKeys("SW1X 8PZ");
+    driver.findElement(By.id("PlentyWebShippingDetailsCity")).clear();
+    driver.findElement(By.id("PlentyWebShippingDetailsCity")).sendKeys("London");
+    new Select(driver.findElement(By.id("PlentyWebShippingDetailsCountry"))).selectByVisibleText("United Kingdom");
+    driver.findElement(By.id("button_nextWebShippingDetails")).click();
+    driver.findElement(By.id("button_nextShippingDetailsList")).click();
     driver.findElement(By.id("PlentyWebPaymentMethod0")).click();
     driver.findElement(By.id("button_nextWebPaymentMethod")).click();
-    driver.findElement(By.id("PlentyWebShippingMethod6")).click();
+    driver.findElement(By.id("PlentyWebShippingMethod7")).click();
     driver.findElement(By.id("button_nextWebShippingMethod")).click();
     driver.findElement(By.id("PlentyWebOrderOverviewAGB")).click();
     driver.findElement(By.id("PlentyWebOrderOverviewWithdrawal")).click();
     driver.findElement(By.id("PlentyWebOrderOverviewNotesTextarea")).clear();
     driver.findElement(By.id("PlentyWebOrderOverviewNotesTextarea")).sendKeys("seleniumhq");
     driver.findElement(By.id("button_place_orderWebOrderOverview")).click();
-    try {
-      assertEquals("", driver.getTitle());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
+    assertEquals("Bahnhof", driver.getTitle());
     driver.get(baseUrl + "/-ActionCallQQWebActionLogoutCustomer/");
   }
 

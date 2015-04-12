@@ -84,11 +84,7 @@ public class TestcaseWorld {
     driver.findElement(By.id("PlentyWebOrderOverviewNotesTextarea")).clear();
     driver.findElement(By.id("PlentyWebOrderOverviewNotesTextarea")).sendKeys("seleniumhq");
     driver.findElement(By.id("button_place_orderWebOrderOverview")).click();
-    try {
-      assertEquals("", driver.getTitle());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
+    assertEquals("Bahnhof", driver.getTitle());
     driver.get(baseUrl + "/-ActionCallQQWebActionLogoutCustomer/");
   }
 

@@ -1,7 +1,7 @@
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
-public class Suit_checkout_java {
+public class Suit_checkout {
 
   public static Test suite() {
     TestSuite suite = new TestSuite();
