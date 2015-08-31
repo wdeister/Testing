@@ -5,15 +5,15 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageObjects.Login_Page;
+import org.testng.*;
 import pageObjects.Myaccount;
 
 /**
  * Created by wdeister on 31/08/15.
  */
 public class MyAccount_Scenario {
+	@Test
 	private static WebDriver driver = null;
-
-
 	public static void main(String[] args) {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -26,11 +26,6 @@ public class MyAccount_Scenario {
 		Myaccount.btn_LogOut(driver).click();
 
 		driver.close();
-	}
-
-	public void testmvn()
-	{
-		System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
 	}
 
 }
