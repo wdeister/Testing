@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://trainstation.plenty-showcase.de/" />
-<title>tc_100000</title>
+<title>tc_100003</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">tc_100000</td></tr>
+<tr><td rowspan="1" colspan="3">tc_100003</td></tr>
 </thead><tbody>
 <!--
                       .-.
@@ -105,13 +105,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.plentyAttributeSelectValueName</td>
+	<td>link=lila€ +15,00</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyText</td>
 	<td>id=price_dynamic_0_131</td>
-	<td>1910,00</td>
+	<td>1915,00</td>
 </tr>
 <!------------------------------In den Warenkorb legen--------------------------------------------------->
 <tr>
@@ -121,7 +121,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>4000</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <!------------------------------Warenkorb------------------------------------------------------------------>
@@ -138,7 +138,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>css=span.PlentyCurrencyValue</td>
-	<td>1910,00</td>
+	<td>1915,00</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -158,7 +158,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>//div[3]/span</td>
-	<td>1609,23</td>
+	<td>1613,44</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -168,7 +168,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>//div[4]/span</td>
-	<td>305,75</td>
+	<td>306,55</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -178,7 +178,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>css=div.bold &gt; span.PlentyCurrencyValue</td>
-	<td>1914,99</td>
+	<td>1919,99</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -193,13 +193,18 @@
 <!------------------------------Checkout------------------------------------------------------------------>
 <!------------------------------Wie möchten Sie zur Kasse gehen?------------------------------------>
 <tr>
-	<td>click</td>
-	<td>id=PlentyWebLoginRegisterRadio1</td>
-	<td></td>
+	<td>type</td>
+	<td>id=PlentyWebLoginLoginEmail</td>
+	<td>waldemar.deister@plentymarkets.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebLoginLoginPassword</td>
+	<td>Test123!</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=button_nextWebLogin1</td>
+	<td>id=button_loginWebLogin2</td>
 	<td></td>
 </tr>
 <tr>
@@ -209,78 +214,8 @@
 </tr>
 <!------------------------------Rechnungsinformationen------------------------------------------------>
 <tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsFirstName</td>
-	<td>Thomas</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsLastName</td>
-	<td>Müller</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsStreet</td>
-	<td>Ahornweg</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsHouseNo</td>
-	<td>777</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsAddressAdditional</td>
-	<td>A</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsZIPCode</td>
-	<td>34117</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsCity</td>
-	<td>Kassel</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsEMail</td>
-	<td>thomas.mueller@example.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsEMail2</td>
-	<td>thomas.mueller@example.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsTelephone</td>
-	<td>0123/45678</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsMobilenumber</td>
-	<td>0123/45678</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsBirthday</td>
-	<td>08</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsBirthmonth</td>
-	<td>04</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsBirthyear</td>
-	<td>1988</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>id=PlentyWebInvoiceDetailsShippingAdressThis</td>
+	<td>id=PlentyWebInvoiceDetailsShippingAdressOther</td>
 	<td></td>
 </tr>
 <tr>
@@ -290,19 +225,35 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>5000</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<!------------------------------Versandinformationen------------------------------------------------>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebShippingDetailsList1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextShippingDetailsList</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
 	<td></td>
 </tr>
 <!------------------------------Zahlungsinformationen--------------------------------------------------->
 <tr>
 	<td>click</td>
-	<td>id=PlentyWebPaymentMethod1</td>
+	<td>id=PlentyWebPaymentMethod0</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=#PlentyWebPaymentMethod1Price &gt; span.PlentyCurrencyValue</td>
-	<td>7,00</td>
+	<td>css=#PlentyWebPaymentMethod0Price &gt; span.PlentyCurrencyValue</td>
+	<td>0,00</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -317,13 +268,13 @@
 <!------------------------------Versandart----------------------------------------------------------------->
 <tr>
 	<td>click</td>
-	<td>id=PlentyWebShippingMethod6</td>
+	<td>id=PlentyWebShippingMethod8</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=#PlentyWebShippingMethod6Price &gt; span.PlentyCurrencyValue</td>
-	<td>4,99</td>
+	<td>css=#PlentyWebShippingMethod8Price &gt; span.PlentyCurrencyValue</td>
+	<td>8,36</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -354,57 +305,52 @@
 <tr>
 	<td>verifyText</td>
 	<td>id=PlentyWebOrderOverviewPaymentMethodDataContainer</td>
-	<td>Zahlung erfolgt per: Nachnahme<br /> <br /><br />Die Zahlung erfolgt bei Übergabe der Ware durch den Paketdienst.</td>
+	<td>Zahlung erfolgt per: Vorkasse<br /> Die Versandabwicklung der Bestellung erfolgt erst nach Zahlungseingang.</td>
 </tr>
 <tr>
 	<td>verifyText</td>
 	<td>id=PlentyWebOrderOverviewShippingMethodDataContainer</td>
-	<td>Versand erfolgt per: DHL versichertes Paket</td>
+	<td>Versand erfolgt per: DHL DHL Welt</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>//div[@id='PlentyWebOrderOverviewItemsMain']/div/div[4]/span</td>
-	<td>1910,00</td>
+	<td>1609,25</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyGoodsValueGrossDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1910,00</td>
+	<td>1609,25</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyGoodsValueNetDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1605,04</td>
+	<td>1609,25</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyShippingCostsGrossDetail &gt; span.PlentyCurrencyValue</td>
-	<td>11,99</td>
+	<td>8,36</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyShippingCostsNetDetail &gt; span.PlentyCurrencyValue</td>
-	<td>10,08</td>
+	<td>8,36</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentySubtotalNetDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1615,12</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=#PlentyVATDetail &gt; span.PlentyCurrencyValue</td>
-	<td>306,87</td>
+	<td>1617,61</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyTotalAmountDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1921,99</td>
+	<td>1617,61</td>
 </tr>
 <tr>
 	<td>verifyText</td>
 	<td>css=div.placeOrderAdditionalHint</td>
-	<td>Zuzüglich 2,00 EUR Inkassogebühr, wird vom Versanddienstleister vor Ort erhoben.</td>
+	<td>Bei Lieferungen in das Nicht-EU-Ausland fallen zusätzliche Zölle, Steuern und Gebühren an.</td>
 </tr>
 <tr>
 	<td>click</td>

@@ -58,6 +58,11 @@
           """----...______________....--'
 -->
 <tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>/wohnzimmer/sofas/</td>
 	<td></td>
@@ -153,7 +158,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>//div[3]/span</td>
-	<td>1613,43</td>
+	<td>1613,44</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -369,7 +374,7 @@
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentyGoodsValueNetDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1609,24</td>
+	<td>1609,25</td>
 </tr>
 <tr>
 	<td>assertText</td>
@@ -384,7 +389,7 @@
 <tr>
 	<td>assertText</td>
 	<td>css=#PlentySubtotalNetDetail &gt; span.PlentyCurrencyValue</td>
-	<td>1619,32</td>
+	<td>1619,33</td>
 </tr>
 <tr>
 	<td>assertText</td>
