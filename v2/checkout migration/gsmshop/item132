@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://feature_150817_checkout_migration.plenty-showcase.de/" />
+<title>item132</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">item132</td></tr>
+</thead><tbody>
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>feature_150817_checkout_migration.plenty-showcase.de/a-132/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=attr_row_0_132_0</td>
+	<td>label=regexp:weiß\s+</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.singlekaufen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td>4000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/basket/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketTitleContainerTitle</td>
+	<td>Warenkorb</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='PlentyWebBasketTitleText1']/p[3]</td>
+	<td>Durch einen Klick auf den Button &quot;Kaufen&quot; wird die Bestellung rechtsverbindlich abgesendet.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=button_proceed_orderWebBasket1</td>
+	<td>Zur Kasse</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketItemsContainerTitle</td>
+	<td>Artikel</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketItemsItemsHeaderDescription</td>
+	<td>Beschreibung</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketItemsItemsHeaderQuantity</td>
+	<td>Anzahl</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketItemsItemsHeaderTotal</td>
+	<td>Summe</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a &gt; strong</td>
+	<td>Zweisitzer Paradise Now</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div/div[2]/div[2]/div/div</td>
+	<td>Artikel-ID</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[2]/div[2]/div/div[2]</td>
+	<td>132</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[2]/div[2]/div[2]/div</td>
+	<td>Rabatt</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[2]/div[2]/div[2]/div[2]</td>
+	<td>5,00% 67,50EUR</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div</td>
+	<td>Stückpreis</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div[2]/span</td>
+	<td>1350,00</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/div</td>
+	<td>Zustand</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/div[2]</td>
+	<td>neu</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[5]/div</td>
+	<td>Farbe</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[5]/div[2]</td>
+	<td>weiß</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketItemsItemsHeaderTotal</td>
+	<td>Summe</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='PlentyBasketRowId_36']/div[4]/span</td>
+	<td>1350,00</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.PlentyVATHint</td>
+	<td>inkl. ges. MwSt. 19%</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=button_change_basketWebBasketItemsRefresh</td>
+	<td>Warenkorb aktualisieren</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=WebBasketShippingCountrySelectedName</td>
+	<td>Deutschland</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=WebBasketPaymentMethodSelectedName</td>
+	<td>vorab Überweisung/Vorkasse</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=WebBasketShippingMethodSelectedName</td>
+	<td>DHL DHL versichertes Paket</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebBasketTotalsContainerTitle</td>
+	<td>Summen</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=PlentyGoodsRebateTitle</td>
+	<td>5,00% Rabatt</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsRebateDetail &gt; span.PlentyCurrencyValue</td>
+	<td>36,50</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsValueGrossTitle</td>
+	<td>Warenwert (brutto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsValueGrossDetail &gt; span.PlentyCurrencyValue</td>
+	<td>693,50</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsValueNetTitle</td>
+	<td>Warenwert (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsValueNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>582,77</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyShippingCostsGrossTitle</td>
+	<td>Versandkosten (brutto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyShippingCostsGrossDetail &gt; span.PlentyCurrencyValue</td>
+	<td>6,90</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyShippingCostsNetTitle</td>
+	<td>Versandkosten (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyShippingCostsNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>5,80</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentySubtotalNetTitle</td>
+	<td>Zwischensumme (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentySubtotalNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>588,57</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyVATTitle</td>
+	<td>MwSt</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyVATDetail &gt; span.PlentyCurrencyValue</td>
+	<td>111,83</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyTotalAmountTitle</td>
+	<td>Gesamtbetrag<br /> inkl. ges. MwSt. inkl. Versandkosten</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyTotalAmountDetail &gt; span.PlentyCurrencyValue</td>
+	<td>700,40</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.PlentyDataAdditional</td>
+	<td>inkl. ges. MwSt. inkl. Versandkosten</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=button_proceed_orderWebBasket2</td>
+	<td>Zur Kasse</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_proceed_orderWebBasket2</td>
+	<td>Zur Kasse</td>
+</tr>
+<!--Warenkorb ende-->
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyOrderWebLoginTitle</td>
+	<td>exact:1. Wie möchten Sie zur Kasse gehen?</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebLoginNotice</td>
+	<td>Registrieren Sie sich für mehr Einkaufskomfort bei Ihrem nächsten Besuch:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebLoginRegisterTitle</td>
+	<td>Als Gast zur Kasse oder Registrierung</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebLoginLoginTitle</td>
+	<td>Anmelden</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebLoginRegisterNote1</td>
+	<td>Registrieren und Zeit sparen!</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyWebLoginRegisterNote2 &gt; div</td>
+	<td>Registrieren Sie sich für mehr Einkaufskomfort bei Ihrem nächsten Besuch:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyWebLoginRegisterNote2 &gt; ul &gt; li</td>
+	<td>Schneller und einfacher Bestellvorgang</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='PlentyWebLoginRegisterNote2']/ul/li[2]</td>
+	<td>Einfacher Zugriff auf Ihren Bestellstatus</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebLoginRegisterRadio1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebLogin1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsFirstName</td>
+	<td>Waldemar</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsLastName</td>
+	<td>Deister</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsStreet</td>
+	<td>Bürgermeister Brunner Str</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsHouseNo</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsAddressAdditional</td>
+	<td>1 OG</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsZIPCode</td>
+	<td>34117</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsCity</td>
+	<td>Kassel</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail</td>
+	<td>waldemar.deister@plentymarkets.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsEMail2</td>
+	<td>waldemar.deister@plentymarkets.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsTelephone</td>
+	<td>0123456789</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsMobilenumber</td>
+	<td>01234567899</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthday</td>
+	<td>08</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthmonth</td>
+	<td>04</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PlentyWebInvoiceDetailsBirthyear</td>
+	<td>1988</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebInvoiceDetailsShippingAdressThis</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebInvoiceDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebPaymentMethod0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebPaymentMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebShippingMethod6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button_nextWebShippingMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewAGB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=PlentyWebOrderOverviewWithdrawal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyWebOrderOverviewNotice &gt; h1</td>
+	<td>Bitte prüfen Sie Ihre Angaben</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewNotice</td>
+	<td>Bitte prüfen Sie Ihre Angaben <br /> Sie können in diesem Bereich Ihre Rechnungs- und Lieferanschrift, sowie Ihre Artikelmengen durch einen Klick auf den jeweiligen Button &quot;Ändern&quot; bearbeiten.<br />Durch einen Klick auf den Button &quot;Kaufen&quot; wird die Bestellung rechtsverbindlich abgesendet.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewInvoiceDataContainer</td>
+	<td>Waldemar Deister<br /> Bürgermeister Brunner Str 15<br /> 1 OG<br /> 34117 Kassel<br /> Deutschland</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewShippingDataContainer</td>
+	<td>Waldemar Deister<br /> Bürgermeister Brunner Str 15<br /> 1 OG<br /> 34117 Kassel<br /> Deutschland</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewPaymentMethodDataContainer</td>
+	<td>Zahlung erfolgt per: vorab Überweisung/Vorkasse<br /> Die Versandabwicklung der Bestellung erfolgt erst nach Zahlungseingang.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewShippingMethodDataContainer</td>
+	<td>Versand erfolgt per: DHL DHL versichertes Paket</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button_changeWebOrderOverviewInvoiceDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button_changeWebOrderOverviewShippingDetails</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button_changeWebOrderOverviewPaymentMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button_changeWebOrderOverviewShippingMethod</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button_change_orderoverview_itemsWebOrderOverviewItems</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsRebateTitle</td>
+	<td>5,00% Rabatt</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsRebateDetail &gt; span.PlentyCurrencyValue</td>
+	<td>-36,50</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsValueGrossTitle</td>
+	<td>Warenwert (brutto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsValueGrossDetail &gt; span.PlentyCurrencyValue</td>
+	<td>693,50</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsRebateTitle</td>
+	<td>5,00% Rabatt</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsRebateDetail &gt; span.PlentyCurrencyValue</td>
+	<td>-36,50</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyGoodsValueNetTitle</td>
+	<td>Warenwert (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyGoodsValueNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>582,77</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyShippingCostsGrossTitle</td>
+	<td>Versandkosten (brutto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyShippingCostsGrossDetail &gt; span.PlentyCurrencyValue</td>
+	<td>6,90</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyShippingCostsNetTitle</td>
+	<td>Versandkosten (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyShippingCostsNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>5,80</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentySubtotalNetTitle</td>
+	<td>Zwischensumme (netto)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentySubtotalNetDetail &gt; span.PlentyCurrencyValue</td>
+	<td>588,57</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyVATTitle_19</td>
+	<td>MwSt 19%</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyVATDetail &gt; span.PlentyCurrencyValue</td>
+	<td>111,83</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyTotalAmountTitle</td>
+	<td>Gesamtbetrag<br /> inkl. ges. MwSt. inkl. Versandkosten</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyTotalAmountDetail &gt; span.PlentyCurrencyValue</td>
+	<td>700,40</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.PlentyDataAdditional</td>
+	<td>inkl. ges. MwSt. inkl. Versandkosten</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=PlentyWebOrderOverviewNotice2</td>
+	<td>Ihre Bestellungen werden bei uns gespeichert. Sollten Sie die Unterlagen zu Ihrer Bestellung verlieren, wenden Sie sich bitte per E-Mail an uns. Wir senden Ihnen gerne eine Kopie der Daten Ihrer Bestellung zu.<br />Alternativ können Sie sich jederzeit mit Ihren Zugangsdaten im Bereich &quot;Mein Konto&quot; einloggen und alle getätigten Bestellungen und deren Status einsehen.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;edit_delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#PlentyWebPurchaseConfirmationNotice1 &gt; h1</td>
+	<td>Vielen Dank für Ihre Bestellung</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
