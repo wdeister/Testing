@@ -47,7 +47,7 @@
 
     <profiles>
         <profile>
-            <id>code-generator</id>
+            <id>myaccount</id>
             <build>
                 <plugins>
 
