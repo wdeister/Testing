@@ -5,7 +5,11 @@
         <classes>
             <class name="automationFramework.MyAccount_Scenario" />
         </classes>
-    </test>
+    </test>    <test name="StandartPurchase" >
+    <classes>
+        <class name="automationFramework.StandartPurchase" />
+    </classes>
+</test>
 
 
 </suite>

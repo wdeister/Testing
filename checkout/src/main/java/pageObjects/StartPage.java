@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
  * Created by wdeister on 14/06/15.
  */
 
-public class Start_Page {
+public class StartPage {
 
 	private static WebElement element = null;
 

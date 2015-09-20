@@ -7,8 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageObjects.Login_Page;
-import org.testng.*;
+import pageObjects.LoginPage;
 import pageObjects.Myaccount;
 
 /**
@@ -25,13 +24,13 @@ public class MyAccount_Scenario {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@Test
+	@Test (priority = 1)
 	public void Login_Logout() {
 		driver.get("http://trainstation.plenty-showcase.de/my-account/");
 		// Start_Page.lnk_MyAccount(driver).click();
-		Login_Page.txtbx_UserName(driver).sendKeys("waldemar.deister@plentymarkets.com");
-		Login_Page.txtbx_Password(driver).sendKeys("Test123!");
-		Login_Page.btn_LogIn(driver).click();
+		LoginPage.txtbx_UserName(driver).sendKeys("waldemar.deister@plentymarkets.com");
+		LoginPage.txtbx_Password(driver).sendKeys("Test123!");
+		LoginPage.btn_LogIn(driver).click();
 		System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
 		Myaccount.btn_LogOut(driver).click();
 

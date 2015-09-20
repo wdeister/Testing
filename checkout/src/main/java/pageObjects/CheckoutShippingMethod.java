@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by wdeister on 15/06/15.
  */
-public class Checkout_ShippingMethod {
+public class CheckoutShippingMethod {
 	private static WebElement element = null;
 
 	// trainstation: DHL versichertes Paket
