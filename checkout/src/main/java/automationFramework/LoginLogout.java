@@ -2,6 +2,8 @@ package automationFramework;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -14,14 +16,16 @@ import pageObjects.Myaccount;
  * Created by wdeister on 31/08/15.
  */
 
-public class MyAccount_Scenario {
+public class LoginLogout {
 
-	public static WebDriver driver = null;
-
+	public static WebDriver driver;
+	private static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 	@BeforeTest
-	public void initWebDriver() {
+	public void setUp() {
+		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 	}
 
 	@Test (priority = 1)

@@ -5,6 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import pageObjects.Basket;
 import pageObjects.ItemView;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -19,9 +20,12 @@ public class StandartPurchase {
 
 	public static WebDriver driver;
 	private static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
+	int itemID = 131;
+	String price = "1900,00";
+	String price2 = "1910,00";
 
 	@BeforeTest
-	public void initWebDriver() {
+	public void setUp() {
 
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
@@ -30,17 +34,34 @@ public class StandartPurchase {
 
 	@Test (priority = 1)
 	public void Order() {
-		int itemID = 131;
-		String price = "1900,00";
 		driver.get("http://trainstation.plenty-showcase.de/a-"+itemID+"/");
 		try {
-			assertEquals(price, ItemView.priceDynamic(driver, itemID).getText());
+			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price);
 		} catch (Exception exp)
 		{
-			Log.warn("Halt stopp!!!", exp);
+			Log.info(exp);
 		}
 
-		driver.close();
+		ItemView.AttributeDropdown(driver).click();
+		ItemView.AttibuteElement(driver).click();
+
+
+		try {
+			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price2);
+		} catch (Exception exp)
+		{
+			Log.warn(exp);
+		}
+
+		ItemView.AddToBasket(driver).click();
+
+	}
+
+	@Test (priority = 2)
+	public void Basket() {
+		driver.get("http://trainstation.plenty-showcase.de/basket/");
+		Basket.proceedOrder(driver).click();
+
 	}
 
 	@AfterTest

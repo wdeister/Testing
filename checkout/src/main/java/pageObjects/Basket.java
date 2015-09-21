@@ -76,4 +76,8 @@ public class Basket {
 		return element;
 	}
 
+	public static WebElement proceedOrder(WebDriver driver) {
+		element =driver.findElement(By.id("button_proceed_order"));
+		return element;
+	}
 }
