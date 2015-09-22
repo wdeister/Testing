@@ -369,11 +369,6 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=PlentyWebInvoiceDetailsEMail2</td>
-	<td>waldemar.deister@plentymarkets.com</td>
-</tr>
-<tr>
-	<td>type</td>
 	<td>id=PlentyWebInvoiceDetailsTelephone</td>
 	<td>0123456789</td>
 </tr>
