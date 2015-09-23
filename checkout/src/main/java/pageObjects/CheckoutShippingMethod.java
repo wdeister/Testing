@@ -57,4 +57,9 @@ public class CheckoutShippingMethod {
 		element = driver.findElement(By.id(""));
 		return element;
 	}
+
+	public static WebElement btn_Continue (WebDriver driver){
+		element = driver.findElement(By.id("button_nextWebShippingMethod"));
+		return element;
+	}
 }
