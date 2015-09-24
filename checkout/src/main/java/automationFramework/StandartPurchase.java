@@ -63,7 +63,7 @@ public class StandartPurchase {
 		ItemView.AddToBasket(driver).click();
 
 		/*auf ajax warten*/
-		WebDriverWait wait = new WebDriverWait(driver, 8);
+		WebDriverWait wait = new WebDriverWait(driver, 18);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Warenkorb öffnen')]")));
 
 	}
