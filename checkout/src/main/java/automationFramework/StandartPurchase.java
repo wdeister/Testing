@@ -41,7 +41,7 @@ public class StandartPurchase {
 
 	@Test (priority = 1)
 	public void Order() {
-		driver.get("http://trainstation.plenty-showcase.de/a-"+itemID+"/");
+		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
 		try {
 			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price);
 		} catch (Exception exp)
@@ -63,8 +63,8 @@ public class StandartPurchase {
 		ItemView.AddToBasket(driver).click();
 
 		/*auf ajax warten*/
-		WebDriverWait wait = new WebDriverWait(driver, 18);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
+
+		driver.findElement(By.cssSelector("li.dropdown.isBasketPreview > a.dropdown-toggle > span.hidden-xs")).click();
 
 	}
 
