@@ -64,7 +64,7 @@ public class StandartPurchase {
 
 		/*auf ajax warten*/
 		WebDriverWait wait = new WebDriverWait(driver, 18);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Warenkorb öffnen')]")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
 
 	}
 
