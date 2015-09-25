@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
  * Created by wdeister on 15/06/15.
  */
 
-public class Checkout_ShippingInformation {
+public class CheckoutShippingInformation {
 
 	private static WebElement element = null;
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
  * Created by wdeister on 14/06/15.
  */
 
-public class Checkout_Login {
+public class CheckoutLogin {
 	private static WebElement element = null;
 
 	public static WebElement radiobx_Guest(WebDriver driver){
@@ -16,27 +16,27 @@ public class Checkout_Login {
 		return element;
 	}
 
-	public static WebElement radiobx_Register(WebElement driver){
+	public static WebElement radiobx_Register(WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebLoginRegisterRadiosRegister"));
 		return element;
 	}
 
-	public static WebElement input_Email(WebElement driver){
+	public static WebElement input_Email(WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebLoginLoginEmail"));
 		return element;
 	}
 
-	public static WebElement input_Password(WebElement driver){
+	public static WebElement input_Password(WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebLoginLoginPassword"));
 		return element;
 	}
 
-	public static WebElement btn_continue(WebElement driver){
+	public static WebElement btn_continue(WebDriver driver){
 		element = driver.findElement(By.id("button_nextWebLogin1"));
 		return element;
 	}
 
-	public static WebElement btn_Login(WebElement driver){
+	public static WebElement btn_Login(WebDriver driver){
 		element = driver.findElement(By.id("button_loginWebLogin2"));
 		return element;
 	}

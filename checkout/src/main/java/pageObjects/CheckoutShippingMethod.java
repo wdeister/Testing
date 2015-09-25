@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by wdeister on 15/06/15.
  */
-public class Checkout_ShippingMethod {
+public class CheckoutShippingMethod {
 	private static WebElement element = null;
 
 	// trainstation: DHL versichertes Paket
@@ -55,6 +55,11 @@ public class Checkout_ShippingMethod {
 	// trainstation: UPS Price
 	public static WebElement txt_ShippingMethodPrice9 (WebDriver driver){
 		element = driver.findElement(By.id(""));
+		return element;
+	}
+
+	public static WebElement btn_Continue (WebDriver driver){
+		element = driver.findElement(By.id("button_nextWebShippingMethod"));
 		return element;
 	}
 }

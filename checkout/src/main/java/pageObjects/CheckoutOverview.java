@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by wdeister on 01/07/15.
  */
-public class Checkout_Overview{
+public class CheckoutOverview {
 
 	private static WebElement element = null;
 

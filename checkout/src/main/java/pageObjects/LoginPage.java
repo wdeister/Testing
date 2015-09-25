@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
  * Created by wdeister on 14/06/15.
  */
 
-public class Login_Page {
+public class LoginPage {
 
 	private static WebElement element = null;
 
