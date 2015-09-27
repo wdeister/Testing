@@ -29,6 +29,7 @@ public class StandartPurchase {
 	int itemID = 131;
 	String price = "1900,00";
 	String price2 = "1910,00";
+	String color = "schwarz€ +10,00";
 	String email = "selenium"+rand.nextInt()+"@example.com";
 
 	@BeforeTest
@@ -36,6 +37,7 @@ public class StandartPurchase {
 
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
+//		driver = new EventFiringWebDriver(new FirefoxDriver()).register(eventListener);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
@@ -49,8 +51,8 @@ public class StandartPurchase {
 			Log.info(exp);
 		}
 
-		ItemView.AttributeDropdown(driver).click();
-		ItemView.AttibuteElement(driver).click();
+		ItemView.attributeDropdown(driver).click();
+		ItemView.attibuteElement(driver, color).click();
 
 
 		try {
@@ -60,18 +62,28 @@ public class StandartPurchase {
 			Log.info(exp);
 		}
 
-		ItemView.AddToBasket(driver).click();
+		ItemView.addToBasket(driver).click();
 
 		/*auf ajax warten*/
 		WebDriverWait wait = new WebDriverWait(driver, 18);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
-		driver.findElement(By.cssSelector("li.dropdown.isBasketPreview > a.dropdown-toggle > span.hidden-xs")).click();
+		ItemView.btn_close(driver).click();
+
+
+		try {
+			assertEquals(StartPage.basketQuantity(driver).getText(), "1");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		StartPage.basketQuantity(driver).click();
 
 	}
 
 	@Test (priority = 2)
 	public void Basket() {
-		driver.get("http://trainstation.plenty-showcase.de/basket/");
+//		driver.get("http://trainstation.plenty-showcase.de/basket/");
 		/*Todo*/
 		Basket.proceedOrder(driver).click();
 

@@ -12,7 +12,7 @@ public class Myaccount {
 
 	private static WebElement element = null;
 
-	public static WebElement btn_LogOut(WebDriver driver){
+	public static WebElement btn_LogOut (WebDriver driver){
 		element = driver.findElement(By.id("button_logoutPlentyWebMyAccountLogout"));
 		return element;
 	}

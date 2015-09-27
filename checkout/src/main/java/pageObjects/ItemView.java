@@ -17,18 +17,23 @@ public class ItemView {
 		return element;
 	}
 
-	public static WebElement AttributeDropdown (WebDriver driver){
+	public static WebElement attributeDropdown (WebDriver driver){
 		element = driver.findElement(By.cssSelector("span.plentyAttributeSelectedValueName"));
 		return element;
 	}
 
-	public static WebElement AttibuteElement (WebDriver driver){
-		element = driver.findElement(By.linkText("schwarz€ +10,00"));
+	public static WebElement attibuteElement (WebDriver driver, String color){
+		element = driver.findElement(By.linkText(color));
 		return element;
 	}
 
-	public static WebElement AddToBasket(WebDriver driver) {
+	public static WebElement addToBasket (WebDriver driver) {
 		element = driver.findElement(By.linkText("In den Warenkorb"));
+		return element;
+	}
+
+	public static WebElement btn_close (WebDriver driver) {
+		element = driver.findElement(By.cssSelector("button.btn.btn-default"));
 		return element;
 	}
 }

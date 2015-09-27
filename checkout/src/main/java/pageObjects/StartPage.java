@@ -12,13 +12,18 @@ public class StartPage {
 
 	private static WebElement element = null;
 
-	public static WebElement lnk_MyAccount(WebDriver driver){
+	public static WebElement lnk_MyAccount (WebDriver driver){
 		element = driver.findElement(By.linkText("Mein Konto"));
 		return element;
 	}
 
-	public static WebElement lnk_LogOut(WebDriver driver){
+	public static WebElement lnk_LogOut (WebDriver driver){
 		element = driver.findElement(By.linkText("Abmelden"));
+		return element;
+	}
+
+	public static WebElement basketQuantity (WebDriver driver){
+		element = driver.findElement(By.id("basket_quantity"));
 		return element;
 	}
 }
