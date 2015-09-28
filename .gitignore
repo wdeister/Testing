@@ -1,0 +1,25 @@
+.DS_Store
+
+
+checkout/.idea/libraries/*
+checkout/.idea/workspace.xml
+checkout/.idea/tasks.xml
+
+
+# output dirs
+target/
+.idea/libraries
+results.xml
+checkout/.settings
+checkout/.idea/scopes
+
+modules.xml
+v2/checkout migration/gsmshop/screenshots
+logfile.log
+.name
+compiler.xml
+encodings.xml
+misc.xml
+uiDesigner.xml
+vcs.xml
+profiles_settings.xml
