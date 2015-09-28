@@ -76,6 +76,11 @@ public class Basket {
 		return element;
 	}
 
+	public static WebElement totalPrice (WebDriver driver){
+		element = driver.findElement(By.cssSelector("div.bold > span.PlentyCurrencyValue"));
+		return element;
+	}
+
 	public static WebElement proceedOrder (WebDriver driver) {
 		element =driver.findElement(By.id("button_proceed_order"));
 		return element;

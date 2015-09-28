@@ -20,12 +20,12 @@ public class LoginLogout {
 
 	public static WebDriver driver;
 	private static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
+
 	@BeforeTest
 	public void setUp() {
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 	}
 
 	@Test (priority = 1)
@@ -42,9 +42,9 @@ public class LoginLogout {
 	}
 
 	@AfterTest
-	public void closeWindow() {
+	public void closeWindow()
+	{
 		driver.close();
 	}
-
 
 }

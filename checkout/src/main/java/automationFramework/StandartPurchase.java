@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import pageObjects.*;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
@@ -54,7 +53,6 @@ public class StandartPurchase {
 		ItemView.attributeDropdown(driver).click();
 		ItemView.attibuteElement(driver, color).click();
 
-
 		try {
 			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price2);
 		} catch (Exception exp)
@@ -69,7 +67,6 @@ public class StandartPurchase {
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
 		ItemView.btn_close(driver).click();
 
-
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");
 		} catch (Exception exp)
@@ -79,18 +76,14 @@ public class StandartPurchase {
 
 		StartPage.basketQuantity(driver).click();
 
-	}
-
-	@Test (priority = 2)
-	public void Basket() {
-//		driver.get("http://trainstation.plenty-showcase.de/basket/");
-		/*Todo*/
+		/*Basket price total*/
+		try {
+			assertEquals(Basket.totalPrice(driver).getText(), "1914,99");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
 		Basket.proceedOrder(driver).click();
-
-	}
-
-	@Test (priority = 3)
-	public void Checkout(){
 
 		/*Registration*/
 		CheckoutLogin.radiobx_Register(driver).click();
@@ -123,14 +116,10 @@ public class StandartPurchase {
 		CheckoutOverview.inp_fld_Notes(driver).sendKeys("Selenium WebDriver");
 		CheckoutOverview.inp_fld_Reference(driver).sendKeys("wörk wörk");
 		CheckoutOverview.btn_Continue(driver).click();
-
-
 	}
 
 	@AfterTest
 	public void closeWindow() {
 		driver.close();
 	}
-
-
 }
