@@ -63,8 +63,8 @@ public class StandartPurchase {
 		ItemView.addToBasket(driver).click();
 
 		/*auf ajax warten*/
-		WebDriverWait wait = new WebDriverWait(driver, 18);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
+/*		WebDriverWait wait = new WebDriverWait(driver, 18);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));*/
 		ItemView.btn_close(driver).click();
 
 		try {
