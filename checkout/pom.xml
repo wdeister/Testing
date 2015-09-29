@@ -6,7 +6,7 @@
 
     <groupId>eu.plentymarkets</groupId>
     <artifactId>checkout</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>checkout</name>
     <url>http://maven.apache.org</url>
 
