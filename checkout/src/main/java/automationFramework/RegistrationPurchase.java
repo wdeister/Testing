@@ -1,23 +1,23 @@
 package automationFramework;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjects.*;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 /**
- * Created by wdeister on 31/08/15.
+ * Created by wdeister on 30/09/15.
  */
-
-public class StandartPurchase {
-
+public class RegistrationPurchase {
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
@@ -37,7 +37,7 @@ public class StandartPurchase {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@Test (priority = 1)
+	@Test(priority = 1)
 	public void Order() {
 		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
 		try {
@@ -59,6 +59,7 @@ public class StandartPurchase {
 
 		ItemView.addToBasket(driver).click();
 
+		/*auf ajax warten*/
 		ItemView.btn_close(driver).click();
 
 		try {

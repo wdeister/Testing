@@ -81,6 +81,16 @@ public class Basket {
 		return element;
 	}
 
+	public static WebElement totalVat (WebDriver driver){
+		element = driver.findElement(By.xpath("//div[4]/span"));
+		return element;
+	}
+
+	public static WebElement refreshBasket (WebDriver driver){
+		element = driver.findElement(By.cssSelector("div.text-right > #button_change_basketWebBasketItemsRefresh"));
+		return element;
+	}
+
 	public static WebElement proceedOrder (WebDriver driver) {
 		element =driver.findElement(By.id("button_proceed_order"));
 		return element;

@@ -5,11 +5,31 @@
         <classes>
             <class name="automationFramework.LoginLogout" />
         </classes>
-    </test>    <test name="StandartPurchase" >
-    <classes>
-        <class name="automationFramework.StandartPurchase" />
-    </classes>
-</test>
+    </test>
+
+    <test name="StandartPurchase" >
+        <classes>
+            <class name="automationFramework.StandartPurchase" />
+        </classes>
+    </test>
+
+    <test name="RegistrationPurchase" >
+        <classes>
+            <class name="automationFramework.RegistrationPurchase" />
+        </classes>
+    </test>
+
+    <test name="CustomerPurchase" >
+        <classes>
+            <class name="automationFramework.CustomerPurchase" />
+        </classes>
+    </test>
+
+    <test name="GuestPurchase" >
+        <classes>
+            <class name="automationFramework.GuestPurchase" />
+        </classes>
+    </test>
 
 
 </suite>

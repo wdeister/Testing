@@ -31,11 +31,10 @@ public class LoginLogout {
 	@Test (priority = 1)
 	public void Login_Logout() {
 		driver.get("http://trainstation.plenty-showcase.de/my-account/");
-		// Start_Page.lnk_MyAccount(driver).click();
 		LoginPage.txtbx_UserName(driver).sendKeys("waldemar.deister@plentymarkets.com");
 		LoginPage.txtbx_Password(driver).sendKeys("Test123!");
 		LoginPage.btn_LogIn(driver).click();
-		System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
+		System.out.println("Login Successfully, now it is the time to Log Off buddy.");
 		Myaccount.btn_LogOut(driver).click();
 
 		driver.close();

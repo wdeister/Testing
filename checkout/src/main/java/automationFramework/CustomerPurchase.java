@@ -1,23 +1,25 @@
 package automationFramework;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjects.*;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 /**
- * Created by wdeister on 31/08/15.
+ * Created by wdeister on 30/09/15.
  */
-
-public class StandartPurchase {
-
+public class CustomerPurchase {
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
@@ -27,7 +29,7 @@ public class StandartPurchase {
 	String price2 = "1910,00";
 	String vat    = "305,75";
 	String color  = "schwarz€ +10,00";
-	String email  = "selenium"+rand.nextInt()+"@example.com";
+	String email  = "selenium-859534656@example.com";
 
 	@BeforeTest
 	public void setUp() {
@@ -37,7 +39,7 @@ public class StandartPurchase {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@Test (priority = 1)
+	@Test(priority = 1)
 	public void Order() {
 		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
 		try {
@@ -59,6 +61,7 @@ public class StandartPurchase {
 
 		ItemView.addToBasket(driver).click();
 
+		/*auf ajax warten*/
 		ItemView.btn_close(driver).click();
 
 		try {
@@ -107,20 +110,76 @@ public class StandartPurchase {
 		Basket.proceedOrder(driver).click();
 
 		/*Registration*/
-		CheckoutLogin.radiobx_Register(driver).click();
-		CheckoutLogin.btn_continue(driver).click();
+		CheckoutLogin.input_Email(driver).sendKeys(email);
+		CheckoutLogin.input_Password(driver).sendKeys(email);
+		CheckoutLogin.btn_Login(driver).click();
 
-		/*Invoice Information*/
-		CheckoutInvoiceInformation.input_FirstName(driver).sendKeys("Max");
-		CheckoutInvoiceInformation.input_LastName(driver).sendKeys("Mustermann");
-		CheckoutInvoiceInformation.input_Street(driver).sendKeys("Bürgermeister Brunner");
-		CheckoutInvoiceInformation.input_HouseNo(driver).sendKeys("15");
-		CheckoutInvoiceInformation.input_ZIPCode(driver).sendKeys("34117");
-		CheckoutInvoiceInformation.input_City(driver).sendKeys("Kassel");
-		CheckoutInvoiceInformation.input_Email(driver).sendKeys(email);
-		CheckoutInvoiceInformation.input_Email2(driver).sendKeys(email);
-		CheckoutInvoiceInformation.input_Password(driver).sendKeys(email);
-		CheckoutInvoiceInformation.input_Password2(driver).sendKeys(email);
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.textToBePresentInElement(CheckoutInvoiceInformation.select_Salutation(driver), "Herr"));
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_FirstName(driver).getAttribute("value"), "Max");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_LastName(driver).getAttribute("value"), "Mustermann");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_Street(driver).getAttribute("value"), "Bürgermeister Brunner");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_HouseNo(driver).getAttribute("value"), "15");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_ZIPCode(driver).getAttribute("value"), "34117");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_City(driver).getAttribute("value"), "Kassel");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.select_Country(driver).getAttribute("value"), "1");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_Email(driver).getAttribute("value"), "selenium-859534656@example.com");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.input_Email2(driver).getAttribute("value"), "selenium-859534656@example.com");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
 		CheckoutInvoiceInformation.btn_Continue(driver).click();
 
 		/*Payment*/
