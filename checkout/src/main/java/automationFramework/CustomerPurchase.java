@@ -1,5 +1,6 @@
 package automationFramework;
 
+import com.github.yev.FailTestScreenshotListener;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.*;
 
@@ -16,9 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by wdeister on 30/09/15.
- */
+@Listeners(FailTestScreenshotListener.class)
 public class CustomerPurchase {
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
@@ -30,6 +30,7 @@ public class CustomerPurchase {
 	String vat    = "305,75";
 	String color  = "schwarz€ +10,00";
 	String email  = "selenium-859534656@example.com";
+
 
 	@BeforeTest
 	public void setUp() {

@@ -43,6 +43,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.yev</groupId>
+            <artifactId>screenshot</artifactId>
+            <version>0.2</version>
+        </dependency>
+
     </dependencies>
 
     <profiles>
