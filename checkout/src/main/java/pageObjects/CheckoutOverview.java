@@ -11,6 +11,41 @@ public class CheckoutOverview {
 
 	private static WebElement element = null;
 
+	public static WebElement totalPrice(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyTotalAmountDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement nettoPrice(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentySubtotalNetDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement nettoShippingCosts(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyShippingCostsNetDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement grossShippingCosts(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyShippingCostsGrossDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement nettoGoodsValue(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyGoodsValueNetDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement grossGoodsValue(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyGoodsValueGrossDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
+	public static WebElement totalVat(WebDriver driver){
+		element = driver.findElement(By.cssSelector("#PlentyVATDetail > span.PlentyCurrencyValue"));
+		return element;
+	}
+
 	public static WebElement ck_bx_AGB (WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebOrderOverviewAGB"));
 		return element;
