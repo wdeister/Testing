@@ -62,6 +62,11 @@ public class CheckoutShippingInformation {
 		return element;
 	}
 
+	public static WebElement select_Country (WebDriver driver){
+		element = driver.findElement(By.id("PlentyWebShippingDetailsCountry"));
+		return element;
+	}
+
 	public static WebElement input_Postident (WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebShippingDetailsPostident"));
 		return element;
@@ -89,6 +94,11 @@ public class CheckoutShippingInformation {
 
 	public static WebElement btn_Continue (WebDriver driver){
 		element = driver.findElement(By.id("button_nextWebShippingDetails"));
+		return element;
+	}
+
+	public static WebElement btn_ContinueShipping (WebDriver driver){
+		element = driver.findElement(By.id("button_nextShippingDetailsList"));
 		return element;
 	}
 
