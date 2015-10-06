@@ -94,7 +94,7 @@ public class CustomerPurchase {
 
 		/*Basket vat total after Refresh*/
 		try {
-			assertEquals(Basket.totalVat(driver).getText(), "305,75");
+			assertEquals(Basket.totalVat(driver).getText(), vat);
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -196,6 +196,55 @@ public class CustomerPurchase {
 		CheckoutOverview.ck_bx_Withdrawal(driver).click();
 		CheckoutOverview.inp_fld_Notes(driver).sendKeys("Selenium WebDriver");
 		CheckoutOverview.inp_fld_Reference(driver).sendKeys("wörk wörk");
+
+		//Warenwert (brutto)
+		try {
+			assertEquals(CheckoutOverview.grossGoodsValue(driver).getText(), "1910,00");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//Warenwert (netto)
+		try {
+			assertEquals(CheckoutOverview.nettoGoodsValue(driver).getText(), "1605,04");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//Versandkosten (brutto)
+		try {
+			assertEquals(CheckoutOverview.grossShippingCosts(driver).getText(), "4,99");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//Versandkosten (netto)
+		try {
+			assertEquals(CheckoutOverview.nettoShippingCosts(driver).getText(), "4,19");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//Zwischensumme (netto)
+		try {
+			assertEquals(CheckoutOverview.nettoPrice(driver).getText(), "1609,23");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//MwSt 19%
+		try {
+			assertEquals(CheckoutOverview.totalVat(driver).getText(), "305,75");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
 		CheckoutOverview.btn_Continue(driver).click();
 	}
 

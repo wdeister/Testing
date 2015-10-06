@@ -31,5 +31,11 @@
         </classes>
     </test>
 
+    <test name="ReferrerPurchase" >
+        <classes>
+            <class name="automationFramework.ReferrerPurchase" />
+        </classes>
+    </test>
+
 
 </suite>

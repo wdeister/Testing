@@ -12,21 +12,18 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by wdeister on 31/08/15.
- */
 
-public class StandartPurchase {
+public class ReferrerPurchase {
 
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
-	int itemID = 131;
+	int itemID = 135;
 	Random rand   = new Random();
-	String price  = "1900,00";
-	String price2 = "1910,00";
-	String vat    = "305,75";
-	String color  = "schwarz€ +10,00";
+	String price  = "700,00";
+	String price2 = "950,00";
+	String vat    = "152,48";
+	String color  = "rot€ +250,00";
 	String email  = "selenium"+rand.nextInt()+"@example.com";
 
 	@BeforeTest
@@ -39,7 +36,7 @@ public class StandartPurchase {
 
 	@Test (priority = 1)
 	public void Order() {
-		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
+		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/?ReferrerID=3");
 		try {
 			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price);
 		} catch (Exception exp)
@@ -80,7 +77,7 @@ public class StandartPurchase {
 
 		/*Basket price total*/
 		try {
-			assertEquals(Basket.totalPrice(driver).getText(), "1914,99");
+			assertEquals(Basket.totalPrice(driver).getText(), "974,99");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -98,7 +95,7 @@ public class StandartPurchase {
 
 		/*Basket price total after Refresh*/
 		try {
-			assertEquals(Basket.totalPrice(driver).getText(), "1914,99");
+			assertEquals(Basket.totalPrice(driver).getText(), "974,99");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -140,7 +137,7 @@ public class StandartPurchase {
 
 		//Warenwert (brutto)
 		try {
-			assertEquals(CheckoutOverview.grossGoodsValue(driver).getText(), "1910,00");
+			assertEquals(CheckoutOverview.grossGoodsValue(driver).getText(), "950,00");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -148,7 +145,7 @@ public class StandartPurchase {
 
 		//Warenwert (netto)
 		try {
-			assertEquals(CheckoutOverview.nettoGoodsValue(driver).getText(), "1605,04");
+			assertEquals(CheckoutOverview.nettoGoodsValue(driver).getText(), "798,32");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -172,7 +169,7 @@ public class StandartPurchase {
 
 		//Zwischensumme (netto)
 		try {
-			assertEquals(CheckoutOverview.nettoPrice(driver).getText(), "1609,23");
+			assertEquals(CheckoutOverview.nettoPrice(driver).getText(), "802,51");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -180,7 +177,7 @@ public class StandartPurchase {
 
 		//MwSt 19%
 		try {
-			assertEquals(CheckoutOverview.totalVat(driver).getText(), "305,75");
+			assertEquals(CheckoutOverview.totalVat(driver).getText(), "152,48");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
