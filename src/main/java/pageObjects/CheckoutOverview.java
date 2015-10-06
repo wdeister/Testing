@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-/**
- * Created by wdeister on 01/07/15.
- */
 public class CheckoutOverview {
 
 	private static WebElement element = null;

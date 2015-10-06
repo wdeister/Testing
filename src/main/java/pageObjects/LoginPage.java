@@ -4,10 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-/**
- * Created by wdeister on 14/06/15.
- */
-
 public class LoginPage {
 
 	private static WebElement element = null;

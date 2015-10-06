@@ -34,6 +34,7 @@ public class ReferrerPurchase {
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.out.println("Running Firefox for " + this.toString());
 	}
 
 	@Test (priority = 1)
@@ -186,6 +187,19 @@ public class ReferrerPurchase {
 		}
 
 		CheckoutOverview.btn_Continue(driver).click();
+
+		//Bestellbestätigung
+		try {
+			assertEquals(OrderConfirmation.textBefore(driver).getText(), "Vielen Dank für Ihren Einkauf!");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		System.out.println(OrderConfirmation.textBefore(driver).getText());
+		System.out.println("Trying to close Firefox for " + this.toString());
+		System.out.println("-------------------------------------------------------");
+
 	}
 
 	@AfterTest

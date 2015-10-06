@@ -12,10 +12,6 @@ import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 import pageObjects.Myaccount;
 
-/**
- * Created by wdeister on 31/08/15.
- */
-
 public class LoginLogout {
 
 	public static WebDriver driver;
@@ -26,6 +22,7 @@ public class LoginLogout {
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.out.println("Running Firefox for " + this.toString());
 	}
 
 	@Test (priority = 1)
@@ -36,8 +33,8 @@ public class LoginLogout {
 		LoginPage.btn_LogIn(driver).click();
 		System.out.println("Login Successfully, now it is the time to Log Off buddy.");
 		Myaccount.btn_LogOut(driver).click();
-
-		driver.close();
+		System.out.println("Trying to close Firefox for " + this.toString());
+		System.out.println("-------------------------------------------------------");
 	}
 
 	@AfterTest
