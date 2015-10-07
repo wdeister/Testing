@@ -60,7 +60,7 @@ public class DeliveryAdressPurchase {
 
 		ItemView.addToBasket(driver).click();
 
-		//ItemView.btn_close(driver).click();
+		ItemView.btn_close(driver).click();
 
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");

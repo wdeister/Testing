@@ -58,8 +58,7 @@ public class RegistrationPurchase {
 
 		ItemView.addToBasket(driver).click();
 
-		/*auf ajax warten*/
-		//ItemView.btn_close(driver).click();
+		ItemView.btn_close(driver).click();
 
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");
