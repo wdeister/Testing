@@ -30,7 +30,7 @@ public class StandartPurchase {
 
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		System.out.println("Running Firefox for " + this.toString());
 	}
 
@@ -56,7 +56,7 @@ public class StandartPurchase {
 
 		ItemView.addToBasket(driver).click();
 
-		ItemView.btn_close(driver).click();
+		//ItemView.btn_close(driver).click();
 
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");

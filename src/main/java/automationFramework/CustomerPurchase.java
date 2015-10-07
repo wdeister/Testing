@@ -25,7 +25,6 @@ public class CustomerPurchase {
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
 	int itemID = 131;
-	Random rand   = new Random();
 	String price  = "1900,00";
 	String price2 = "1910,00";
 	String vat    = "305,75";
@@ -38,7 +37,7 @@ public class CustomerPurchase {
 
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		System.out.println("Running Firefox for " + this.toString());
 	}
 
@@ -65,7 +64,7 @@ public class CustomerPurchase {
 		ItemView.addToBasket(driver).click();
 
 		/*auf ajax warten*/
-		ItemView.btn_close(driver).click();
+		//ItemView.btn_close(driver).click();
 
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");
