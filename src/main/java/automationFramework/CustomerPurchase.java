@@ -37,7 +37,7 @@ public class CustomerPurchase {
 
 		DOMConfigurator.configure("log4j.xml");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
 		System.out.println("Running Firefox for " + this.toString());
 	}
 
@@ -62,7 +62,6 @@ public class CustomerPurchase {
 		}
 
 		ItemView.addToBasket(driver).click();
-		
 		ItemView.btn_close(driver).click();
 
 		try {
@@ -115,7 +114,7 @@ public class CustomerPurchase {
 		CheckoutLogin.input_Password(driver).sendKeys(email);
 		CheckoutLogin.btn_Login(driver).click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.textToBePresentInElement(CheckoutInvoiceInformation.select_Salutation(driver), "Herr"));
 
 		try {
