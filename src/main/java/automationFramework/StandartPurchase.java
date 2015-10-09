@@ -1,9 +1,11 @@
 package automationFramework;
 
+import com.github.yev.FailTestScreenshotListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.*;
 import org.apache.log4j.Logger;
@@ -12,6 +14,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
+@Listeners(FailTestScreenshotListener.class)
 public class StandartPurchase {
 
 	public static WebDriver driver;
