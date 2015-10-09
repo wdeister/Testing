@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 import pageObjects.Myaccount;
 
+import static org.testng.Assert.assertEquals;
+
 public class LoginLogout {
 
 	public static WebDriver driver;
@@ -28,11 +30,21 @@ public class LoginLogout {
 	@Test (priority = 1)
 	public void Login_Logout() {
 		driver.get("http://trainstation.plenty-showcase.de/my-account/");
-		LoginPage.txtbx_UserName(driver).sendKeys("waldemar.deister@plentymarkets.com");
-		LoginPage.txtbx_Password(driver).sendKeys("Test123!");
+		LoginPage.txtbx_UserName(driver).sendKeys("selenium-859534656@example.com");
+		LoginPage.txtbx_Password(driver).sendKeys("selenium-859534656@example.com");
 		LoginPage.btn_LogIn(driver).click();
-		System.out.println("Login Successfully, now it is the time to Log Off buddy.");
 		Myaccount.btn_LogOut(driver).click();
+
+		try {
+			assertEquals(Myaccount.messageBox(driver).getText(), "×\n" +
+					"Schließen\n" +
+					"Hinweis\n" +
+					"Sie sind nun nicht mehr im System eingeloggt.");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+		System.out.println(Myaccount.messageBox(driver).getText());
 		System.out.println("Trying to close Firefox for " + this.toString());
 		System.out.println("-------------------------------------------------------");
 	}

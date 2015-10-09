@@ -12,4 +12,9 @@ public class Myaccount {
 		element = driver.findElement(By.id("button_logoutPlentyWebMyAccountLogout"));
 		return element;
 	}
+
+	public static WebElement messageBox (WebDriver driver){
+		element = driver.findElement(By.cssSelector("div.plentyMessageBox"));
+		return element;
+	}
 }
