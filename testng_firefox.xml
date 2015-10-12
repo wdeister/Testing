@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1" >
+    <test name="Login/Logout" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.LoginLogout" />
+        </classes>
+    </test>
+
+    <test name="StandartPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.StandartPurchase" />
+        </classes>
+    </test>
+
+    <test name="RegistrationPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.RegistrationPurchase" />
+        </classes>
+    </test>
+
+    <test name="CustomerPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.CustomerPurchase" />
+        </classes>
+    </test>
+
+    <test name="GuestPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.GuestPurchase" />
+        </classes>
+    </test>
+
+    <test name="ReferrerPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.ReferrerPurchase" />
+        </classes>
+    </test>
+
+    <test name="DeliveryAdressPurchase" >
+        <parameter name="browser" value="FF"></parameter>
+        <classes>
+            <class name="automationFramework.DeliveryAdressPurchase" />
+        </classes>
+    </test>
+
+</suite>

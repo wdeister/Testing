@@ -1,19 +1,17 @@
 package automationFramework;
 
 import com.github.yev.FailTestScreenshotListener;
+import com.google.common.base.Function;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.*;
-
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
@@ -24,6 +22,19 @@ public class CustomerPurchase {
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
+	public WebElement fluentWait(final By locator) {
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(20, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+		WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				return driver.findElement(locator);
+			}
+		});
+		return foo;
+	};
+
 	int itemID = 131;
 	String price  = "1900,00";
 	String price2 = "1910,00";
@@ -33,16 +44,28 @@ public class CustomerPurchase {
 
 
 	@BeforeTest
-	public void setUp() {
-
+	@Parameters("browser")
+	public void setUp(String browser) {
 		DOMConfigurator.configure("log4j.xml");
-		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
-		System.out.println("Running Firefox for " + this.toString());
+		if (browser.equalsIgnoreCase("FF")){
+			driver = new FirefoxDriver();
+			System.out.println("Running Firefox for " + this.toString());
+		}
+
+		if (browser.equalsIgnoreCase("Chrome")){
+			System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver");
+
+			driver = new ChromeDriver();
+			System.out.println("Running Chrome for " + this.toString());
+		}
+		driver.manage().window().setSize(new Dimension(1280, 960));
+		driver.manage().timeouts().implicitlyWait(75, TimeUnit.SECONDS);
 	}
 
-	@Test(priority = 1)
+	@Test
 	public void Order() {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+
 		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
 		try {
 			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price);
@@ -62,7 +85,15 @@ public class CustomerPurchase {
 		}
 
 		ItemView.addToBasket(driver).click();
-		ItemView.btn_close(driver).click();
+
+		try {
+			assertEquals(ItemView.priceDynamicOverlay(driver, itemID).getText(), price2);
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		wait.until(ExpectedConditions.elementToBeClickable(StartPage.basketQuantity(driver)));
 
 		try {
 			assertEquals(StartPage.basketQuantity(driver).getText(), "1");
@@ -110,11 +141,10 @@ public class CustomerPurchase {
 		Basket.proceedOrder(driver).click();
 
 		/*Registration*/
+		wait.until(ExpectedConditions.elementToBeClickable(CheckoutLogin.btn_Login(driver)));
 		CheckoutLogin.input_Email(driver).sendKeys(email);
 		CheckoutLogin.input_Password(driver).sendKeys(email);
 		CheckoutLogin.btn_Login(driver).click();
-
-		WebDriverWait wait = new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.textToBePresentInElement(CheckoutInvoiceInformation.select_Salutation(driver), "Herr"));
 
 		try {
@@ -183,14 +213,18 @@ public class CustomerPurchase {
 		CheckoutInvoiceInformation.btn_Continue(driver).click();
 
 		/*Payment*/
+		wait.until(ExpectedConditions.elementToBeClickable(CheckoutPaymentInformation.btn_Continue(driver)));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("PlentyWebPaymentMethod0")));
 		CheckoutPaymentInformation.radio_bx_CashInAdvance(driver).click();
 		CheckoutPaymentInformation.btn_Continue(driver).click();
 
 		/*Shipping*/
+		wait.until(ExpectedConditions.elementToBeClickable(CheckoutShippingMethod.btn_Continue(driver)));
 		CheckoutShippingMethod.radio_bx_PlentyWebShippingMethod6(driver).click();
 		CheckoutShippingMethod.btn_Continue(driver).click();
 
 		/*Overview*/
+		wait.until(ExpectedConditions.elementToBeClickable(CheckoutOverview.ck_bx_AGB(driver)));
 		CheckoutOverview.ck_bx_AGB(driver).click();
 		CheckoutOverview.ck_bx_Withdrawal(driver).click();
 		CheckoutOverview.inp_fld_Notes(driver).sendKeys("Selenium WebDriver");
@@ -255,13 +289,12 @@ public class CustomerPurchase {
 		}
 
 		System.out.println(OrderConfirmation.textBefore(driver).getText());
-		System.out.println("Trying to close Firefox for " + this.toString());
-		System.out.println("-------------------------------------------------------");
-
 	}
 
 	@AfterTest
 	public void closeWindow() {
+		System.out.println("Trying to close browser for " + this.toString());
+		System.out.println("-------------------------------------------------------");
 		driver.close();
 	}
 }

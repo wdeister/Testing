@@ -5,12 +5,12 @@ import java.util.concurrent.TimeUnit;
 import com.github.yev.FailTestScreenshotListener;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.junit.runners.Parameterized;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.LoginPage;
 import pageObjects.Myaccount;
 
@@ -23,14 +23,26 @@ public class LoginLogout {
 	private static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
 
 	@BeforeTest
-	public void setUp() {
+	@Parameters("browser")
+	public void setUp(String browser) {
 		DOMConfigurator.configure("log4j.xml");
-		driver = new FirefoxDriver();
+		if (browser.equalsIgnoreCase("FF")){
+			driver = new FirefoxDriver();
+			System.out.println("Running Firefox for " + this.toString());
+		}
+
+		if (browser.equalsIgnoreCase("Chrome")){
+			System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver");
+
+			driver = new ChromeDriver();
+			System.out.println("Running Chrome for " + this.toString());
+		}
+		driver.manage().window().setSize(new Dimension(1280, 960));
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		System.out.println("Running Firefox for " + this.toString());
+
 	}
 
-	@Test (priority = 1)
+	@Test
 	public void Login_Logout() {
 		driver.get("http://trainstation.plenty-showcase.de/my-account/");
 		LoginPage.txtbx_UserName(driver).sendKeys("selenium-859534656@example.com");
@@ -48,13 +60,13 @@ public class LoginLogout {
 			Log.info(exp);
 		}
 		System.out.println(Myaccount.messageBox(driver).getText());
-		System.out.println("Trying to close Firefox for " + this.toString());
-		System.out.println("-------------------------------------------------------");
+
 	}
 
 	@AfterTest
-	public void closeWindow()
-	{
+	public void closeWindow() {
+		System.out.println("Trying to close browser for " + this.toString());
+		System.out.println("-------------------------------------------------------");
 		driver.close();
 	}
 

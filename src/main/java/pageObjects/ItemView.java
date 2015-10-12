@@ -14,6 +14,12 @@ public class ItemView {
 		return element;
 	}
 
+	public static WebElement priceDynamicOverlay (WebDriver driver, int itemId){
+		String css = "#span.large > #price_dynamic_0_" + itemId;
+		element = driver.findElement(By.cssSelector(css));
+		return element;
+	}
+
 	public static WebElement attributeDropdown (WebDriver driver){
 		element = driver.findElement(By.cssSelector("span.plentyAttributeSelectedValueName"));
 		return element;
