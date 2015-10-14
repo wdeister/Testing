@@ -50,4 +50,11 @@
         </classes>
     </test>
 
+    <test name="DebitPurchase" >
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="automationFramework.DebitPurchase" />
+        </classes>
+    </test>
+
 </suite>

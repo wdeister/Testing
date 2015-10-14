@@ -78,6 +78,11 @@ public class CheckoutInvoiceInformation {
 		return element;
 	}
 
+	public static WebElement txtInvoiceNotice (WebDriver driver){
+		element = driver.findElement(By.xpath("(//div[@id='PlentyWebInvoiceDetailsNotice'])[2]"));
+		return element;
+	}
+
 	public static WebElement input_Phone (WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebInvoiceDetailsTelephone"));
 		return element;

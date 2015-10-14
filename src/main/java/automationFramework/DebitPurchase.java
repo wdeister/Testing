@@ -2,6 +2,8 @@ package automationFramework;
 
 import com.github.yev.FailTestScreenshotListener;
 import com.google.common.base.Function;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,14 +12,14 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import pageObjects.*;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 @Listeners(FailTestScreenshotListener.class)
-public class ReferrerPurchase {
+public class DebitPurchase {
 
 	public static WebDriver driver;
 	public static Logger Log = Logger.getLogger(StandartPurchase.class.getName());
@@ -35,12 +37,12 @@ public class ReferrerPurchase {
 		return foo;
 	};
 
-	int itemID = 135;
+	int itemID = 131;
 	Random rand   = new Random();
-	String price  = "700,00";
-	String price2 = "950,00";
-	String vat    = "152,48";
-	String color  = "rot€ +250,00";
+	String price  = "1900,00";
+	String price2 = "1910,00";
+	String vat    = "305,75";
+	String color  = "schwarz€ +10,00";
 	String email  = "selenium"+rand.nextInt()+"@example.com";
 
 	@BeforeTest
@@ -66,7 +68,7 @@ public class ReferrerPurchase {
 	public void Order() {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 
-		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/?ReferrerID=3");
+		driver.get("http://trainstation.plenty-showcase.de/a-" + itemID + "/");
 		try {
 			assertEquals(ItemView.priceDynamic(driver, itemID).getText(), price);
 		} catch (Exception exp)
@@ -114,7 +116,7 @@ public class ReferrerPurchase {
 
 		/*Basket price total*/
 		try {
-			assertEquals(Basket.totalPrice(driver).getText(), "974,99");
+			assertEquals(Basket.totalPrice(driver).getText(), "1914,99");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -132,7 +134,7 @@ public class ReferrerPurchase {
 
 		/*Basket price total after Refresh*/
 		try {
-			assertEquals(Basket.totalPrice(driver).getText(), "974,99");
+			assertEquals(Basket.totalPrice(driver).getText(), "1914,99");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -161,8 +163,26 @@ public class ReferrerPurchase {
 
 		/*Payment*/
 		wait.until(ExpectedConditions.elementToBeClickable(CheckoutPaymentInformation.btn_Continue(driver)));
-		CheckoutPaymentInformation.radio_bx_CashInAdvance(driver).click();
+		CheckoutPaymentInformation.radio_bx_Debit(driver).click();
+
+		try {
+			assertEquals(CheckoutPaymentInformation.priceDebit(driver).getText(), "0,99");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
 		CheckoutPaymentInformation.btn_Continue(driver).click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(CheckoutPaymentInformation.input_BankName(driver)));
+		CheckoutPaymentInformation.input_BankName(driver).sendKeys("ING-DIBADIBADU");
+		CheckoutPaymentInformation.input_BLZ(driver).sendKeys("50010517");
+		CheckoutPaymentInformation.input_BankAccount(driver).sendKeys("0648489890");
+		CheckoutPaymentInformation.input_OwnerLast(driver).sendKeys("Max Mustermann");
+		CheckoutPaymentInformation.input_IBAN(driver).sendKeys("DE12500105170648489890");
+		CheckoutPaymentInformation.input_BIC(driver).sendKeys("INGDDEFFXXX");
+
+		CheckoutPaymentInformation.btn_ContinueDebit(driver).click();
 
 		/*Shipping*/
 		wait.until(ExpectedConditions.elementToBeClickable(CheckoutShippingMethod.btn_Continue(driver)));
@@ -178,7 +198,7 @@ public class ReferrerPurchase {
 
 		//Warenwert (brutto)
 		try {
-			assertEquals(CheckoutOverview.grossGoodsValue(driver).getText(), "950,00");
+			assertEquals(CheckoutOverview.grossGoodsValue(driver).getText(), "1910,00");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -186,7 +206,7 @@ public class ReferrerPurchase {
 
 		//Warenwert (netto)
 		try {
-			assertEquals(CheckoutOverview.nettoGoodsValue(driver).getText(), "798,32");
+			assertEquals(CheckoutOverview.nettoGoodsValue(driver).getText(), "1605,04");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -194,7 +214,7 @@ public class ReferrerPurchase {
 
 		//Versandkosten (brutto)
 		try {
-			assertEquals(CheckoutOverview.grossShippingCosts(driver).getText(), "4,99");
+			assertEquals(CheckoutOverview.grossShippingCosts(driver).getText(), "5,98");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -202,7 +222,7 @@ public class ReferrerPurchase {
 
 		//Versandkosten (netto)
 		try {
-			assertEquals(CheckoutOverview.nettoShippingCosts(driver).getText(), "4,19");
+			assertEquals(CheckoutOverview.nettoShippingCosts(driver).getText(), "5,03");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -210,7 +230,7 @@ public class ReferrerPurchase {
 
 		//Zwischensumme (netto)
 		try {
-			assertEquals(CheckoutOverview.nettoPrice(driver).getText(), "802,51");
+			assertEquals(CheckoutOverview.nettoPrice(driver).getText(), "1610,07");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
@@ -218,7 +238,15 @@ public class ReferrerPurchase {
 
 		//MwSt 19%
 		try {
-			assertEquals(CheckoutOverview.totalVat(driver).getText(), "152,48");
+			assertEquals(CheckoutOverview.totalVat(driver).getText(), "305,91");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
+
+		//Gesamtbetrag
+		try {
+			assertEquals(CheckoutOverview.totalPrice(driver).getText(), "1915,98");
 		} catch (Exception exp)
 		{
 			Log.info(exp);

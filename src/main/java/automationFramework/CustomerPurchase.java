@@ -59,7 +59,7 @@ public class CustomerPurchase {
 			System.out.println("Running Chrome for " + this.toString());
 		}
 		driver.manage().window().setSize(new Dimension(1280, 960));
-		driver.manage().timeouts().implicitlyWait(75, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -146,6 +146,13 @@ public class CustomerPurchase {
 		CheckoutLogin.input_Password(driver).sendKeys(email);
 		CheckoutLogin.btn_Login(driver).click();
 		wait.until(ExpectedConditions.textToBePresentInElement(CheckoutInvoiceInformation.select_Salutation(driver), "Herr"));
+
+		try {
+			assertEquals(CheckoutInvoiceInformation.txtInvoiceNotice(driver).getText(), "Ihre Rechnungsadresse kann nicht geändert werden, da noch offene Bestellungen vorliegen.");
+		} catch (Exception exp)
+		{
+			Log.info(exp);
+		}
 
 		try {
 			assertEquals(CheckoutInvoiceInformation.input_FirstName(driver).getAttribute("value"), "Max");
@@ -282,13 +289,13 @@ public class CustomerPurchase {
 
 		//Bestellbestätigung
 		try {
-			assertEquals(OrderConfirmation.textBefore(driver).getText(), "Vielen Dank für Ihren Einkauf!");
+			assertEquals(OrderConfirmation.textBeforeUsual(driver).getText(), "Vielen Dank für Ihren Einkauf!");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
 		}
 
-		System.out.println(OrderConfirmation.textBefore(driver).getText());
+		System.out.println(OrderConfirmation.textBeforeUsual(driver).getText());
 	}
 
 	@AfterTest

@@ -48,6 +48,16 @@ public class CheckoutOverview {
 		return element;
 	}
 
+	public static WebElement ck_bx_KlarnaAGB (WebDriver driver){
+		element = driver.findElement(By.id("PlentyWebOrderOverviewKlarnaAGB"));
+		return element;
+	}
+
+	public static WebElement ck_bx_FSK (WebDriver driver){
+		element = driver.findElement(By.id("PlentyWebOrderOverviewFSK"));
+		return element;
+	}
+
 	public static WebElement ck_bx_Withdrawal (WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebOrderOverviewWithdrawal"));
 		return element;
@@ -60,6 +70,11 @@ public class CheckoutOverview {
 
 	public static WebElement inp_fld_Reference (WebDriver driver){
 		element = driver.findElement(By.id("PlentyWebOrderOverviewReferenceInput"));
+		return element;
+	}
+
+	public static WebElement txt_fld_Payment (WebDriver driver){
+		element = driver.findElement(By.id("PlentyWebOrderOverviewPaymentMethodDataContainer"));
 		return element;
 	}
 

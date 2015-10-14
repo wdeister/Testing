@@ -26,6 +26,12 @@ public class LoginLogout {
 	@Parameters("browser")
 	public void setUp(String browser) {
 		DOMConfigurator.configure("log4j.xml");
+		System.out.println("        _                _                              _           _\t      \n" +
+				" _ __  | |    ___  _ __ | |_ __  __ _ _ _  ___ _  _ __ | | __  ___ | |_  ___  \n" +
+				"| '_ \\ | |   / _ \\| '  \\|  _|\\ \\/ /| ' ' \\/  _' || '__|| |/ / / _ \\|  _|/ __| \n" +
+				"| |_) || |_ |  __/| || || |_  \\  / | | | || (_) || |   |   < |  __/| |_ \\__ \\ \n" +
+				"|  __/ |___| \\___||_||_| \\__| / /  |_|_|_|\\___._||_|   |_|\\_\\ \\___|\\___||___/ \n" +
+				"|_| ");
 		if (browser.equalsIgnoreCase("FF")){
 			driver = new FirefoxDriver();
 			System.out.println("Running Firefox for " + this.toString());

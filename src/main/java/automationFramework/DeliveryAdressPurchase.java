@@ -253,13 +253,13 @@ public class DeliveryAdressPurchase {
 
 		//Bestellbestätigung
 		try {
-			assertEquals(OrderConfirmation.textBefore(driver).getText(), "Vielen Dank für Ihren Einkauf!");
+			assertEquals(OrderConfirmation.textBeforeUsual(driver).getText(), "Vielen Dank für Ihren Einkauf!");
 		} catch (Exception exp)
 		{
 			Log.info(exp);
 		}
 
-		System.out.println(OrderConfirmation.textBefore(driver).getText());
+		System.out.println(OrderConfirmation.textBeforeUsual(driver).getText());
 	}
 
 	@AfterTest
